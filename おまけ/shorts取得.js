@@ -5,8 +5,11 @@ const box=contentClasses.getElementsByClassName("style-scope ytd-two-column-brow
 const shorts=box.getElementsByClassName("style-scope ytd-rich-grid-renderer");
 const getableShorts=Array.from(shorts).filter(item=>getComputedStyle(item).display!=="none");
 const links=getableShorts.map(item=>{
-const url=item.querySelector("#content.style-scope.ytd-rich-item-renderer").getElementsByClassName("shortsLockupViewModelHostEndpoint reel-item-endpoint")[0];
+const scope=item.querySelector("#content.style-scope.ytd-rich-item-renderer");
+if(scope){
+const url=url.getElementsByClassName("shortsLockupViewModelHostEndpoint reel-item-endpoint")[0];
 return url.href;
+}
 });
 if(links.find(item=>!item)){
 alert("リンクが取得できない箇所がありました");
