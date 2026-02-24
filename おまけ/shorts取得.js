@@ -35,10 +35,11 @@ const IdElement=url.split("/shorts/");
 return IdElement[IdElement.length-1];
 }
 return;
-//ショート動画のURLでもそれ以外でもない場合はなし
+/ショート動画のURLでもそれ以外でもない場合はなし*/
 }
 })(item);
-if(!ID&&!item){
+if(!ID&&item){
+/*最後の箇所は除外する*/
 alert("適合するURLがありませんでした");
 return;
 }
