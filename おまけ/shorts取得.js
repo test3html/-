@@ -7,7 +7,7 @@ const getableShorts=Array.from(shorts).filter(item=>getComputedStyle(item).displ
 const links=getableShorts.map(item=>{
 const scope=item.querySelector("#content.style-scope.ytd-rich-item-renderer");
 if(scope){
-const url=url.getElementsByClassName("shortsLockupViewModelHostEndpoint reel-item-endpoint")[0];
+const url=scope.getElementsByClassName("shortsLockupViewModelHostEndpoint reel-item-endpoint")[0];
 return url.href;
 }
 });
