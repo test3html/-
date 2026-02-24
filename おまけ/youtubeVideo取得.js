@@ -10,7 +10,7 @@ return;
 /*処理を施すためfilterは使えない*/
 const links=forcus.map(item=>{
 const aTag=item.querySelector("a#video-title-link");
-//item.getElementBy...ではdocumentにないので取得不可
+/*item.getElementBy...ではdocumentにないので取得不可*/
 if(!aTag){
 /*linksはmapされなくても元要素が残る*/
 return null;
