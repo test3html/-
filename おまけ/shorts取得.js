@@ -48,7 +48,7 @@ const blob=new Blob([txt],{"type":"text/plain"});
 const aTag=document.createElement("a");
 const downLoadPath=URL.createObjectURL(blob);
 aTag.href=downLoadPath;
-aTag.downLoad="youtubeVideoList.txt";
+aTag.download="youtubeVideoList.txt";
 document.body.appendChild(aTag);
 aTag.click();
 URL.revokeObjectURL(downLoadPath);
