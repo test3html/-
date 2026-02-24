@@ -7,12 +7,12 @@ if(forcus.length===0){
 alert("動画が選択できません。リロードしてください。");
 return;
 }
-//処理を施すためfilterは使えない
+/*処理を施すためfilterは使えない*/
 const links=forcus.map(item=>{
 const aTag=item.querySelector("a#video-title-link");
 //item.getElementBy...ではdocumentにないので取得不可
 if(!aTag){
-//linksはmapされなくても元要素が残る
+/*linksはmapされなくても元要素が残る*/
 return null;
 }
 const url=aTag.href.split("&pp=");
@@ -40,7 +40,7 @@ const IdElement=ID.split("/shorts/");
 return IdElement[IdElement.length-1];
 }
 return;
-//ショート動画のURLでもそれ以外でもない場合はなし
+/*ショート動画のURLでもそれ以外でもない場合はなし*/
 })(item);
 if(!ID){
 alert("適合するURLがありませんでした");
