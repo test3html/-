@@ -7,6 +7,7 @@ const getableShorts=Array.from(shorts).filter(item=>getComputedStyle(item).displ
 const links=getableShorts.map(item=>{
 const scope=item.querySelector("#content.style-scope.ytd-rich-item-renderer");
 if(scope){
+/*最後の箇所は取得できない*/
 const url=scope.getElementsByClassName("shortsLockupViewModelHostEndpoint reel-item-endpoint")[0];
 return url.href;
 }
@@ -24,6 +25,7 @@ return links;
 const ids=(function(array){
 const customURLs=array.map(item=>{
 const ID=(function(url){
+if(url){
 if(url.includes("watch?v=")){
 const IdElement=url.split("watch?v=");
 return IdElement[IdElement.length-1];
@@ -34,8 +36,9 @@ return IdElement[IdElement.length-1];
 }
 return;
 //ショート動画のURLでもそれ以外でもない場合はなし
+}
 })(item);
-if(!ID){
+if(!ID&&!item){
 alert("適合するURLがありませんでした");
 return;
 }
