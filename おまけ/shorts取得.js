@@ -20,13 +20,13 @@ return links;
 })();
 const ids=(function(array){
 const customURLs=array.map(item=>{
-const ID=(function(ID){
-if(ID.includes("watch?v=")){
-const IdElement=ID.split("watch?v=");
+const ID=(function(url){
+if(url.includes("watch?v=")){
+const IdElement=url.split("watch?v=");
 return IdElement[IdElement.length-1];
 }
-if(ID.includes("/shorts/")){
-const IdElement=ID.split("/shorts/");
+if(url.includes("/shorts/")){
+const IdElement=url.split("/shorts/");
 return IdElement[IdElement.length-1];
 }
 return;
@@ -39,13 +39,13 @@ return;
 return ID;
 });
 return customURLs;
-})(urls);
+})(videos);
 const txt=(function(list){
-const arrayText=list.join("\n")
+const arrayText=list.join("\n");
 return arrayText;
 })(ids);
 const blob=new Blob([txt],{"type":"text/plain"});
-const aTag=docuemnt.createElement("a");
+const aTag=document.createElement("a");
 const downLoadPath=URL.createObjectURL(blob);
 aTag.href=downLoadPath;
 aTag.downLoad="youtubeVideoList.txt";
