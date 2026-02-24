@@ -51,7 +51,7 @@ return ID;
 return customURLs;
 })(videos);
 const txt=(function(list){
-const arrayText=list.join("\n")
+const arrayText=list.join("\n");
 return arrayText;
 })(ids);
 const blob=new Blob([txt],{"type":"text/plain"});
