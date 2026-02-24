@@ -30,13 +30,13 @@ return links;
 })();
 const ids=(function(array){
 const customURLs=array.map(item=>{
-const ID=(function(ID){
-if(ID.includes("watch?v=")){
-const IdElement=ID.split("watch?v=");
+const ID=(function(url){
+if(url.includes("watch?v=")){
+const IdElement=url.split("watch?v=");
 return IdElement[IdElement.length-1];
 }
-if(ID.includes("/shorts/")){
-const IdElement=ID.split("/shorts/");
+if(url.includes("/shorts/")){
+const IdElement=url.split("/shorts/");
 return IdElement[IdElement.length-1];
 }
 return;
