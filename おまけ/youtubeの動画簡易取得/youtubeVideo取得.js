@@ -62,4 +62,5 @@ aTag.download="youtubeVideoList.txt";
 document.body.appendChild(aTag);
 aTag.click();
 URL.revokeObjectURL(downLoadPath);
+remove(aTag);
 })();
