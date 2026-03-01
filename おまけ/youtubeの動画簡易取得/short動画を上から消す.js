@@ -1,5 +1,4 @@
 (()=>{
-const videos=(function(){
 const contentClasses=document.getElementsByClassName("style-scope ytd-rich-grid-renderer")["contents"];
 const lines=contentClasses.querySelectorAll("ytd-rich-item-renderer");
 const forcus=Array.from(lines).filter(el=>getComputedStyle(el).display!=="none");
